@@ -8,10 +8,7 @@ export async function handleRequest(request) {
   const search = url.search;
 
   if (pathname === '/' || pathname === '/index.html') {
-    return new Response('Proxy is Running!  More Details: https://github.com/tech-shrimp/gemini-balance-lite', {
-      status: 200,
-      headers: { 'Content-Type': 'text/html' }
-    });
+    return Response.redirect("https://satsuite.collegeboard.org/sat", 302);
   }
 
   if (pathname === '/verify' && request.method === 'POST') {
